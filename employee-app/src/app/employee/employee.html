@@ -1,0 +1,19 @@
+<form [formGroup]="employeeForm" (ngSubmit)="save()">
+  <input formControlName="name" placeholder="Name">
+  <input formControlName="email" placeholder="Email">
+  <input formControlName="mobile" placeholder="Mobile">
+  <input formControlName="age" placeholder="Age">
+  <input formControlName="salary" placeholder="Salary">
+  <button type="submit">Save</button>
+</form>
+
+<table>
+  <tr *ngFor="let emp of employees">
+    <td>{{emp.name}}</td>
+    <td>{{emp.email}}</td>
+    <td>
+      <button (click)="edit(emp)">Edit</button>
+      <button (click)="delete(emp.id)">Delete</button>
+    </td>
+  </tr>
+</table>
